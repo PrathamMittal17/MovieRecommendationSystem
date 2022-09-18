@@ -1,0 +1,5 @@
+tmdbsimple
+scikit-learn
+pandas
+spacy
+streamlit
