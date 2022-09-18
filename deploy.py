@@ -1,7 +1,5 @@
 import pickle
 import tmdbsimple as tmdb
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 import streamlit as st
 import spacy
@@ -9,10 +7,9 @@ import spacy
 tmdb.API_KEY = '263c6358c90d7f6db1e6d19845df32c8'
 sentiment_analysis = pickle.load(open('sentiment_analysis_model.pkl', 'rb'))
 movies_df = pd.read_csv("data/movies.csv")
+similarity = pickle.load(open('similarity.pkl', 'rb'))
 nlp = spacy.load("en_core_web_sm")
 
-
-similarity = pickle.load(open('similarity.pkl', 'rb'))
 indices = pd.Series(movies_df.index, index=movies_df.title)
 
 
